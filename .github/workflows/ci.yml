@@ -20,4 +20,4 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           shared-key: build
-      - run: cargo test -- --skip dump::tests::test_ent_collider_component_size --skip dump::tests::test_grs_deathmatch_state_size
+      - run: cargo test -- --skip tests::test_ent_collider_component_size --skip tests::test_grs_deathmatch_state_size
