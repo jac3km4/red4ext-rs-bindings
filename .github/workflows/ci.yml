@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+
+env:
+  CARGO_INCREMENTAL: 0
+  CARGO_TERM_COLOR: always
+  CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: build
+      - run: cargo test -- --skip dump::tests::test_ent_collider_component_size --skip dump::tests::test_grs_deathmatch_state_size

@@ -1,0 +1,7 @@
+[package]
+name = "red4rs-bindings"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+red4rs = { git = "https://github.com/jac3km4/red4rs", rev = "v0.1.0" }
