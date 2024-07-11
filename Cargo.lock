@@ -247,8 +247,8 @@ dependencies = [
 
 [[package]]
 name = "red4rs"
-version = "0.1.5"
-source = "git+https://github.com/jac3km4/red4rs?rev=v0.1.5#06b5dc169416f52e87217b6ef7b39354b863a1da"
+version = "0.1.6"
+source = "git+https://github.com/jac3km4/red4rs?rev=v0.1.6#d77734cfff0b102ba17adbacd06fb1de8d6e683b"
 dependencies = [
  "bindgen",
  "cmake",
@@ -262,7 +262,7 @@ dependencies = [
 
 [[package]]
 name = "red4rs-bindings"
-version = "0.1.5"
+version = "0.1.6"
 dependencies = [
  "red4rs",
 ]
