@@ -253,8 +253,8 @@ dependencies = [
 
 [[package]]
 name = "red4rs"
-version = "0.1.4"
-source = "git+https://github.com/jac3km4/red4rs?rev=v0.1.4#b5ff20867f4827f502b6ca4bf428ebf31a3aa948"
+version = "0.1.7"
+source = "git+https://github.com/jac3km4/red4rs?rev=v0.1.7#3717953c1f053c6729b2b66605b1661431968553"
 dependencies = [
  "bindgen",
  "cmake",
