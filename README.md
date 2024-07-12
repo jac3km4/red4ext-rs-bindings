@@ -1,20 +1,20 @@
-# red4rs-bindings
-Automatically generated for all RTTI types for [red4rs](https://github.com/jac3km4/red4rs)
+# red4ext-rs-bindings
+Automatically generated for all RTTI types for [red4ext-rs](https://github.com/jac3km4/red4ext-rs)
 
 # usage
 - add the dependencies
   ```toml
   [dependencies]
-  red4rs = { git = "https://github.com/jac3km4/red4rs", features = ["log",], rev = "v0.1.7" }
-  red4rs-bindings = { git = "https://github.com/jac3km4/red4rs-bindings", rev = "v0.1.8" }
+  red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", features = ["log",], rev = "v0.6.7" }
+  red4ext-rs-bindings = { git = "https://github.com/jac3km4/red4ext-rs-bindings", rev = "v0.2.0" }
   ```
-- use them from your red4rs plugin
+- use them from your red4ext-rs plugin
     ```rust
-    use red4rs::{
+    use red4ext_rs::{
         call, log,
         types::{CName, Ref, ScriptClassOps},
     };
-    use red4rs_bindings::{HdrColor, InkRectangleWidget, PlayerPuppet, Vector2, VehicleObject};
+    use red4ext_rs_bindings::{HdrColor, InkRectangleWidget, PlayerPuppet, Vector2, VehicleObject};
 
     fn ui_example() -> Ref<InkRectangleWidget> {
         InkRectangleWidget::new_ref_with(|rect| {

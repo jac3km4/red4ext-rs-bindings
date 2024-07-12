@@ -246,9 +246,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "red4rs"
-version = "0.1.7"
-source = "git+https://github.com/jac3km4/red4rs?rev=v0.1.7#3717953c1f053c6729b2b66605b1661431968553"
+name = "red4ext-rs"
+version = "0.6.1"
+source = "git+https://github.com/jac3km4/red4ext-rs?rev=v0.6.1#71b0e1777c039875f2de678e5ed750c7c32b0528"
 dependencies = [
  "bindgen",
  "cmake",
@@ -261,10 +261,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "red4rs-bindings"
-version = "0.1.7"
+name = "red4ext-rs-bindings"
+version = "0.2.0-dev"
 dependencies = [
- "red4rs",
+ "red4ext-rs",
 ]
 
 [[package]]
