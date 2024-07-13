@@ -247,8 +247,8 @@ dependencies = [
 
 [[package]]
 name = "red4ext-rs"
-version = "0.6.2"
-source = "git+https://github.com/jac3km4/red4ext-rs?rev=v0.6.2#0bc5dc07c85b53d75567b6d7a8312a0ae813c5cf"
+version = "0.6.3"
+source = "git+https://github.com/jac3km4/red4ext-rs?rev=v0.6.3#ec4e0653a75e52d6d73b5752b4297cb79c8a94f8"
 dependencies = [
  "bindgen",
  "cmake",

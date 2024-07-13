@@ -4,7 +4,7 @@ version = "0.2.1"
 edition = "2021"
 
 [dependencies]
-red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "v0.6.2" }
+red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "v0.6.3" }
 
 [package.metadata.release]
 pre-release-commit-message = "chore: bump version"
