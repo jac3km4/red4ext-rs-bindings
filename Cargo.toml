@@ -1,14 +1,13 @@
 [package]
 name = "red4ext-rs-bindings"
-version = "0.2.0"
+version = "0.2.2"
 edition = "2021"
 
 [dependencies]
 mint = { version = "0.5", optional = true }
-red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "v0.6.1" }
+red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "v0.6.3" }
 
-[metadata.release]
-[workspace.metadata.release]
+[package.metadata.release]
 pre-release-commit-message = "chore: bump version"
 publish = false
 
