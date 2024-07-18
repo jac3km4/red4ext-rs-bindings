@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 mint = { version = "0.5", optional = true }
-red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "v0.6.3" }
+red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "v0.6.4" }
 
 [package.metadata.release]
 pre-release-commit-message = "chore: bump version"
