@@ -5,14 +5,14 @@ Automatically generated for all RTTI types for [red4ext-rs](https://github.com/j
 - add the dependencies
   ```toml
   [dependencies]
-  red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", features = ["log",], rev = "v0.6.4" }
-  red4ext-rs-bindings = { git = "https://github.com/jac3km4/red4ext-rs-bindings", rev = "v0.2.3" }
+  red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", features = ["log",], rev = "v0.7.2" }
+  red4ext-rs-bindings = { git = "https://github.com/jac3km4/red4ext-rs-bindings", rev = "v0.3.0" }
   ```
 - use them from your red4ext-rs plugin
     ```rust
     use red4ext_rs::{
-        call, log,
-        types::{CName, Ref, ScriptClassOps},
+        call, log, ScriptClassOps,
+        types::{CName, Ref},
     };
     use red4ext_rs_bindings::{HdrColor, InkRectangleWidget, PlayerPuppet, Vector2, VehicleObject};
 
