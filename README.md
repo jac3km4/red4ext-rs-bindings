@@ -5,8 +5,8 @@ Automatically generated for all RTTI types for [red4ext-rs](https://github.com/j
 - add the dependencies
   ```toml
   [dependencies]
-  red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", features = ["log"], rev = "v0.7.2" }
-  red4ext-rs-bindings = { git = "https://github.com/jac3km4/red4ext-rs-bindings", rev = "v0.3.0" }
+  red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", features = ["log"], rev = "v0.8.0" }
+  red4ext-rs-bindings = { git = "https://github.com/jac3km4/red4ext-rs-bindings", rev = "v0.4.0" }
   ```
 - use them from your red4ext-rs plugin
     ```rust
