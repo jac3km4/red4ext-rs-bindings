@@ -4,20 +4,58 @@ on:
   push:
     branches: ["master"]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 env:
-  CARGO_INCREMENTAL: 0
   CARGO_TERM_COLOR: always
-  CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
+  RED4EXT_BUILD_TIMINGS: "1"
 
 jobs:
-  test:
-    name: Run tests
-    runs-on: windows-2025
+  check-format:
+    name: Check formatting
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@v7
+      - run: rustup toolchain install nightly-2026-10-15 --profile minimal --component rustfmt --no-self-update
+      - run: cargo +nightly-2026-10-15 fmt --all -- --check
+
+  check:
+    name: Lint and test (Windows, ${{ matrix.features }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - features: default
+            cargo-args: ""
+          - features: all
+            cargo-args: --all-features
+    env:
+      RUSTUP_TOOLCHAIN: stable
+    runs-on: windows-2025
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - run: rustup toolchain install stable --profile minimal --component clippy --no-self-update
+      - name: Record native toolchain versions
+        run: |
+          rustc +stable --version --verbose
+          cmake --version
+          clang --version
       - uses: Swatinem/rust-cache@v2
         with:
-          shared-key: build
-      - run: cargo test
+          prefix-key: v1-workspace
+          key: ${{ matrix.features }}
+          # Keep compiled binding outputs to speed up subsequent checks.
+          cache-workspace-crates: "true"
+      - name: Lint
+        run: cargo +stable clippy --locked --workspace --all-targets ${{ matrix.cargo-args }} -- -D warnings
+      - name: Test
+        run: cargo +stable test --locked -p red4ext-rs-bindings ${{ matrix.cargo-args }} --timings
